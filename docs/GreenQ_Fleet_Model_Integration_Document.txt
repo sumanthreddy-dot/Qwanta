@@ -1,0 +1,148 @@
+GreenQ-Fleet — Model Prediction & Visualization Specification
+Project-ready document describing how the generated multi-model fuel-consumption predictions are incorporated into GreenQ-Fleet and displayed as graphs for the fleet optimizer.
+1. Purpose
+The prediction layer provides fuel-consumption estimates for operating conditions before the optimizer selects the final fleet configuration. These predictions feed fuel-used, fuel-cost and Well-to-Wake (WTW) GHG calculations, which then become objectives for the quantum-inspired multi-objective optimizer.
+2. Models covered
+Linear Regression
+SVM/SVR
+Random Forest
+Extra Trees
+HistGradientBoosting
+MLP Neural Network
+XGBoost
+LightGBM
+CatBoost
+3. Scenario prediction grid
+The generated scenario file contains the combinations used for the prototype: weather scenarios, operating speeds, fuel options and shore-power decisions. The ML prediction itself is based on operational/environmental features; fuel type and shore power are handled downstream in the cost/GHG layer unless a future fuel-specific model is trained.
+Rows in scenario prediction file: 270
+4. Graphs to incorporate into the Streamlit project
+Fuel consumption vs speed
+Line chart. X-axis: speed (kn). Y-axis: predicted fuel consumption (L/hr). Plot XGBoost, LightGBM and CatBoost; allow the user to select other models.
+Weather impact
+Line chart. X-axis: speed (kn). Y-axis: predicted fuel (L/hr). Use separate selectable weather scenarios: Normal, Bad Weather and Severe Weather.
+Model comparison
+Bar chart at a selected operating condition showing predicted L/hr for all nine models.
+Optimization impact
+After QIGA/NSGA-II produces solutions, compare total fuel, cost and WTW GHG of the selected solution against Pareto alternatives.
+5. Data flow inside GreenQ-Fleet
+HISTORICAL / SCENARIO DATA
+        ↓
+MODEL PREDICTION (XGBoost / CatBoost / LightGBM)
+        ↓
+Predicted fuel consumption (L/hr)
+        ↓
+Voyage duration → total fuel used
+        ↓
+Fuel price + WTW emission factor
+        ↓
+Fuel cost + WTW GHG
+        ↓
+QIGA / QIEA multi-objective optimization
+        ↓
+Pareto solutions → Streamlit graphs → final recommendation
+6. Important modeling note
+The original research dataset contains a single Kamsarmax operational dataset. The fleet fields and scenario fields added for GreenQ-Fleet are prototype/synthetic inputs and must be clearly labeled as such. Do not present them as measurements from the published dataset.
+The current CatBoost optimizer-compatible model should not use future engine variables such as shaft RPM, shaft power or shaft torque as decision-time inputs. Those variables are useful for an analysis model but are unavailable when the optimizer is choosing speed/fuel/fleet decisions.
+7. Recommended project role of each model
+Model
+Project role
+CatBoost
+Primary integrated prediction model; already connected to the project.
+XGBoost
+Primary competing model / possible replacement if it performs better.
+LightGBM
+Fast boosting benchmark.
+Extra Trees
+Strong classical tree benchmark.
+Random Forest
+Classical baseline.
+HistGradientBoosting
+Lightweight boosting benchmark.
+SVM/SVR
+Nonlinear baseline.
+MLP Neural Network
+Neural-network benchmark.
+Linear Regression
+Simple baseline.
+8. Files generated for integration
+GreenQ_All_Model_Predictions_Every_Data_Row.csv — predictions for the full dataset.
+GreenQ_All_Model_Predictions_All_Scenarios.csv — scenario-level prediction grid.
+GreenQ_Model_Benchmark_Metrics.csv — benchmark metrics for model comparison.
+9. Example graph data
+At 12 kn under Normal weather, the scenario file contains one prediction per model per scenario combination.
+Prediction column
+Value (L/hr)
+pred_linear_regression_lph
+553.85
+pred_svm_svr_lph
+846.61
+pred_random_forest_lph
+921.59
+pred_extra_trees_lph
+939.25
+pred_histgradientboosting_lph
+922.84
+pred_neural_network_mlp_lph
+578.89
+pred_xgboost_lph
+904.06
+pred_lightgbm_lph
+875.48
+pred_catboost_lph
+937.70
+pred_linear_regression_voyage_litres
+46153.92
+pred_linear_regression_fuel_cost_placeholder
+36923.13
+pred_linear_regression_wtw_kgco2e_placeholder
+147692.54
+pred_svm_svr_voyage_litres
+70551.23
+pred_svm_svr_fuel_cost_placeholder
+56440.99
+pred_svm_svr_wtw_kgco2e_placeholder
+225763.94
+pred_random_forest_voyage_litres
+76799.50
+pred_random_forest_fuel_cost_placeholder
+61439.60
+pred_random_forest_wtw_kgco2e_placeholder
+245758.39
+pred_extra_trees_voyage_litres
+78270.76
+pred_extra_trees_fuel_cost_placeholder
+62616.61
+pred_extra_trees_wtw_kgco2e_placeholder
+250466.45
+pred_histgradientboosting_voyage_litres
+76903.63
+pred_histgradientboosting_fuel_cost_placeholder
+61522.90
+pred_histgradientboosting_wtw_kgco2e_placeholder
+246091.62
+pred_neural_network_mlp_voyage_litres
+48240.56
+pred_neural_network_mlp_fuel_cost_placeholder
+38592.45
+pred_neural_network_mlp_wtw_kgco2e_placeholder
+154369.79
+pred_xgboost_voyage_litres
+75338.29
+pred_xgboost_fuel_cost_placeholder
+60270.63
+pred_xgboost_wtw_kgco2e_placeholder
+241082.52
+pred_lightgbm_voyage_litres
+72956.77
+pred_lightgbm_fuel_cost_placeholder
+58365.42
+pred_lightgbm_wtw_kgco2e_placeholder
+233461.68
+pred_catboost_voyage_litres
+78141.81
+pred_catboost_fuel_cost_placeholder
+62513.45
+pred_catboost_wtw_kgco2e_placeholder
+250053.80
+10. Implementation rule
+The Streamlit dashboard should let the user choose weather scenario, speed, model and (where relevant) fuel/shore-power assumptions. The graph should update from the stored prediction/scenario CSV rather than retraining a model on every interaction. The optimizer can call the integrated predictor for candidate fitness.

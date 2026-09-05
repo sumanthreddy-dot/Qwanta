@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGradTanker" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#050811"/>
+      <stop offset="60%" stop-color="#0A1324"/>
+      <stop offset="100%" stop-color="#0E1E38"/>
+    </linearGradient>
+    <linearGradient id="seaGradTanker" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0B2747"/>
+      <stop offset="50%" stop-color="#06182E"/>
+      <stop offset="100%" stop-color="#020B16"/>
+    </linearGradient>
+    <linearGradient id="hullGradTanker" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="deckPipeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#64748B"/>
+      <stop offset="50%" stop-color="#94A3B8"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <filter id="glowTanker" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="260" fill="url(#skyGradTanker)"/>
+  <ellipse cx="400" cy="260" rx="350" ry="25" fill="#0EA5E9" opacity="0.10" filter="url(#glowTanker)"/>
+  <rect y="260" width="800" height="190" fill="url(#seaGradTanker)"/>
+
+  <!-- Water Reflections -->
+  <path d="M 0,274 Q 240,270 480,274 T 800,274" stroke="#0284C7" stroke-width="1.2" fill="none" opacity="0.3"/>
+  <path d="M 0,292 Q 210,288 520,292 T 800,292" stroke="#10B981" stroke-width="1.2" fill="none" opacity="0.2"/>
+
+  <!-- Bow Wave -->
+  <path d="M 660,288 Q 715,296 785,308 L 735,322 Q 685,306 650,296 Z" fill="#E0F2FE" opacity="0.3"/>
+
+  <!-- OIL TANKER HULL (Lower Freeboard when Laden) -->
+  <!-- Red Keel -->
+  <path d="M 125,282 L 660,282 L 678,286 L 688,292 L 660,296 L 130,296 L 120,288 Z" fill="#991B1B"/>
+  <!-- Main Hull -->
+  <path d="M 125,220 L 190,220 L 635,220 L 685,260 L 660,282 L 125,282 L 115,255 Z" fill="url(#hullGradTanker)" stroke="#334155" stroke-width="1.5"/>
+  <line x1="120" y1="280" x2="668" y2="280" stroke="#38BDF8" stroke-width="2" opacity="0.8"/>
+
+  <!-- TANKER DECK PIPELINES & MANIFOLD CENTER -->
+  <!-- Raised Catwalk extending along vessel center -->
+  <line x1="200" y1="214" x2="620" y2="214" stroke="#94A3B8" stroke-width="2"/>
+  <!-- Stanchions / supports -->
+  <line x1="240" y1="214" x2="240" y2="220" stroke="#64748B" stroke-width="1.5"/>
+  <line x1="280" y1="214" x2="280" y2="220" stroke="#64748B" stroke-width="1.5"/>
+  <line x1="320" y1="214" x2="320" y2="220" stroke="#64748B" stroke-width="1.5"/>
+  <line x1="360" y1="214" x2="360" y2="220" stroke="#64748B" stroke-width="1.5"/>
+  <line x1="440" y1="214" x2="440" y2="220" stroke="#64748B" stroke-width="1.5"/>
+  <line x1="480" y1="214" x2="480" y2="220" stroke="#64748B" stroke-width="1.5"/>
+  <line x1="520" y1="214" x2="520" y2="220" stroke="#64748B" stroke-width="1.5"/>
+  <line x1="560" y1="214" x2="560" y2="220" stroke="#64748B" stroke-width="1.5"/>
+  <line x1="600" y1="214" x2="600" y2="220" stroke="#64748B" stroke-width="1.5"/>
+
+  <!-- Cargo Manifold Midships (Central piping valves) -->
+  <rect x="385" y="198" width="40" height="22" rx="2" fill="#334155" stroke="#64748B"/>
+  <rect x="390" y="202" width="30" height="5" fill="#E11D48"/> <!-- Warning Red Cargo Valve -->
+  <line x1="405" y1="198" x2="405" y2="185" stroke="#CBD5E1" stroke-width="2"/>
+  <!-- Manifold Crane (Small hose handling crane) -->
+  <rect x="380" y="185" width="5" height="25" fill="#F59E0B"/>
+  <line x1="382" y1="185" x2="365" y2="165" stroke="#F59E0B" stroke-width="2"/>
+
+  <!-- Longitudinal Crude Oil Cargo Pipelines -->
+  <rect x="205" y="217" width="175" height="3" fill="url(#deckPipeGrad)"/>
+  <rect x="205" y="221" width="175" height="2.5" fill="url(#deckPipeGrad)"/>
+  <rect x="430" y="217" width="185" height="3" fill="url(#deckPipeGrad)"/>
+  <rect x="430" y="221" width="185" height="2.5" fill="url(#deckPipeGrad)"/>
+
+  <!-- Tank Inspection Hatches (Round expansion trunks) -->
+  <circle cx="260" cy="216" r="4" fill="#64748B"/>
+  <circle cx="340" cy="216" r="4" fill="#64748B"/>
+  <circle cx="470" cy="216" r="4" fill="#64748B"/>
+  <circle cx="550" cy="216" r="4" fill="#64748B"/>
+
+  <!-- AFT SUPERSTRUCTURE & ACCOMMODATION -->
+  <rect x="140" y="140" width="52" height="80" rx="3" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.2"/>
+  <rect x="135" y="137" width="62" height="10" rx="1" fill="#E2E8F0"/>
+  <rect x="141" y="140" width="50" height="5" rx="1" fill="#0284C7"/>
+  <!-- Portholes -->
+  <circle cx="155" cy="162" r="2.5" fill="#38BDF8"/>
+  <circle cx="168" cy="162" r="2.5" fill="#38BDF8"/>
+  <circle cx="181" cy="162" r="2.5" fill="#38BDF8"/>
+  <circle cx="155" cy="180" r="2.5" fill="#38BDF8"/>
+  <circle cx="168" cy="180" r="2.5" fill="#38BDF8"/>
+  <circle cx="181" cy="180" r="2.5" fill="#38BDF8"/>
+
+  <!-- Twin Exhaust Funnels (Characteristic of modern VLCC tankers) -->
+  <path d="M 152,105 L 166,105 L 168,137 L 150,137 Z" fill="#0F172A" stroke="#334155"/>
+  <path d="M 172,105 L 186,105 L 188,137 L 170,137 Z" fill="#0F172A" stroke="#334155"/>
+  <rect x="151" y="112" width="16" height="5" fill="#38BDF8"/>
+  <rect x="171" y="112" width="16" height="5" fill="#38BDF8"/>
+  <line x1="168" y1="137" x2="168" y2="75" stroke="#CBD5E1" stroke-width="2"/>
+  <circle cx="168" cy="73" r="3" fill="#38BDF8" filter="url(#glowTanker)"/>
+
+  <!-- Hull Decal -->
+  <text x="310" y="252" fill="#C49A72" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" letter-spacing="4" opacity="0.95">QWANTA • CRUDE TANKER</text>
+  <circle cx="295" cy="247" r="4" fill="#38BDF8" filter="url(#glowTanker)"/>
+</svg>

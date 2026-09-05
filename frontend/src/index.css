@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════════
+   QWANTA Design System — Option 1: Modern Maritime Tech
+   Ratio: 60% Crisp White & Ice · 30% Midnight Navy · 10% Cobalt & Cyan & Emerald
+   ═══════════════════════════════════════════════════════════════ */
+
+@layer base {
+  :root {
+    /* 60% Crisp White & Ice family */
+    --ivory:        #FFFFFF;
+    --ivory-warm:   #FFFFFF;
+    --ivory-muted:  #EFF6FF;
+    --line-beige:   #C5D5EE;
+
+    /* 30% Midnight Oceanic Navy & Slate */
+    --obsidian:     #0A1628;
+    --obsidian-2:   #0D1B2A;
+    --ink:          #0F172A;
+    --ink-muted:    #64748B;
+
+    /* 10% Vibrant Accents: Electric Cobalt, Ocean Cyan, Marine Emerald */
+    --copper:       #2563EB;
+    --copper-soft:  #0284C7;
+    --copper-light: #38BDF8;
+    --copper-dark:  #1D4ED8;
+    --emerald:      #10B981;
+    --emerald-dark: #059669;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #FFFFFF;
+    color: var(--ink);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+}
+
+/* ─── PANELS & CARDS ──────────────────────────────────────────── */
+@layer components {
+
+  .q-card {
+    background-color: #FFFFFF;
+    border: 1px solid #C5D5EE;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05);
+    transition: box-shadow 0.22s ease, transform 0.22s ease, border-color 0.22s ease;
+  }
+
+  .q-card-hover:hover {
+    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    transform: translateY(-2px);
+    border-color: #2563EB;
+  }
+
+  /* Midnight Navy dark card (nav sidebar) */
+  .q-card-dark {
+    @apply rounded-xl border;
+    background-color: var(--obsidian-2);
+    border-color: rgba(37, 99, 235, 0.18);
+  }
+
+  /* Frosted-white glass (data panels) */
+  .glass-ivory {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    border: 1px solid rgba(197, 213, 238, 0.8);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px -2px rgba(37, 99, 235, 0.05);
+  }
+
+  /* Frosted-navy glass (modals, overlays) */
+  .glass-obsidian {
+    background: rgba(10, 22, 40, 0.94);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(37, 99, 235, 0.25);
+    border-radius: 0.75rem;
+  }
+
+  /* ─── BUTTONS ─────────────────────────────────────────────── */
+
+  .btn-copper, .btn-primary {
+    @apply inline-flex items-center gap-2 font-semibold rounded-lg px-5 py-2.5 text-sm transition-all duration-200;
+    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);
+  }
+  .btn-copper:hover, .btn-primary:hover {
+    background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.45);
+    transform: translateY(-1px);
+  }
+  .btn-copper:active, .btn-primary:active { transform: translateY(0); }
+
+  .btn-ivory, .btn-secondary {
+    @apply inline-flex items-center gap-2 font-semibold rounded-lg px-5 py-2.5 text-sm transition-all duration-200;
+    background: #FFFFFF;
+    color: var(--ink);
+    border: 1px solid var(--line-beige);
+    box-shadow: 0 1px 3px rgba(10, 22, 40, 0.05);
+  }
+  .btn-ivory:hover, .btn-secondary:hover {
+    background: #EFF6FF;
+    border-color: #2563EB;
+    color: #2563EB;
+    box-shadow: 0 2px 10px rgba(37, 99, 235, 0.12);
+  }
+
+  .btn-obsidian {
+    @apply inline-flex items-center gap-2 font-semibold rounded-lg px-5 py-2.5 text-sm transition-all duration-200;
+    background: var(--obsidian);
+    color: #ffffff;
+    border: 1px solid rgba(37, 99, 235, 0.22);
+  }
+  .btn-obsidian:hover {
+    background: var(--obsidian-2);
+    border-color: rgba(37, 99, 235, 0.5);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
+  }
+
+  /* ─── BADGES ──────────────────────────────────────────────── */
+
+  .badge-copper, .badge-cobalt {
+    @apply inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-0.5 rounded-full;
+    background: rgba(37, 99, 235, 0.1);
+    color: #1D4ED8;
+    border: 1px solid rgba(37, 99, 235, 0.25);
+  }
+
+  .badge-cyan {
+    @apply inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-0.5 rounded-full;
+    background: rgba(2, 132, 199, 0.1);
+    color: #0284C7;
+    border: 1px solid rgba(2, 132, 199, 0.25);
+  }
+
+  .badge-obsidian, .badge-navy {
+    @apply inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-0.5 rounded-full;
+    background: var(--obsidian);
+    color: #EFF6FF;
+    border: 1px solid rgba(197, 213, 238, 0.2);
+  }
+
+  .badge-success, .badge-emerald {
+    @apply inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-0.5 rounded-full;
+    background: rgba(16, 185, 129, 0.12);
+    color: #047857;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+  }
+
+  .badge-warning {
+    @apply inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-0.5 rounded-full;
+    background: rgba(245, 158, 11, 0.1);
+    color: #b45309;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+  }
+
+  /* ─── FORM ELEMENTS ────────────────────────────────────────── */
+
+  .q-input {
+    @apply w-full rounded-lg px-4 py-2.5 text-sm transition-all duration-200;
+    background: #FFFFFF;
+    color: var(--ink);
+    border: 1px solid var(--line-beige);
+    outline: none;
+  }
+  .q-input:focus {
+    border-color: #2563EB;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  }
+
+  .q-select {
+    @apply q-input appearance-none cursor-pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234A6A9A' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 2.5rem;
+  }
+
+  /* ─── STAT BOXES ───────────────────────────────────────────── */
+
+  .stat-box {
+    @apply q-card p-5 flex flex-col gap-1;
+  }
+
+  .stat-box .stat-label {
+    @apply text-xs font-medium uppercase tracking-wider;
+    color: var(--ink-muted);
+  }
+
+  .stat-box .stat-value {
+    @apply text-3xl font-bold;
+    color: var(--ink);
+  }
+
+  .stat-box .stat-unit {
+    @apply text-sm font-medium;
+    color: #0284C7;
+  }
+
+  /* ─── SECTION HEADINGS ─────────────────────────────────────── */
+
+  .section-heading {
+    @apply text-xl font-bold;
+    color: var(--ink);
+  }
+
+  .section-subheading {
+    @apply text-sm mt-1;
+    color: var(--ink-muted);
+  }
+
+  /* Blue ruled divider */
+  .copper-rule {
+    @apply relative flex items-center gap-3 my-6;
+  }
+  .copper-rule::before, .copper-rule::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line-beige), transparent);
+  }
+
+  /* ─── MARITIME VESSEL CARD ANIMATIONS ─────────────────────── */
+
+  .vessel-card {
+    @apply q-card q-card-hover cursor-pointer overflow-hidden;
+    animation: fadeIn 0.4s ease-out both;
+  }
+
+  .vessel-card:hover .vessel-img {
+    transform: translateY(-3px) scale(1.01);
+  }
+
+  .vessel-img {
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Blue-to-cyan wave on vessel cards */
+  .vessel-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1D4ED8, #2563EB, #0284C7, #38BDF8);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .vessel-card:hover::after { opacity: 1; }
+
+  /* ─── SIDEBAR NAV ──────────────────────────────────────────── */
+
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200;
+    color: #93B4D8;
+  }
+
+  .nav-item:hover {
+    background: rgba(37, 99, 235, 0.12);
+    color: #FFFFFF;
+  }
+
+  .nav-item.active {
+    background: rgba(37, 99, 235, 0.18);
+    color: #60A5FA;
+    border-left: 3px solid #2563EB;
+  }
+
+  /* ─── RECHARTS OVERRIDES ───────────────────────────────────── */
+
+  .recharts-cartesian-grid-horizontal line,
+  .recharts-cartesian-grid-vertical line {
+    stroke: var(--line-beige) !important;
+  }
+
+  .recharts-tooltip-wrapper .recharts-default-tooltip {
+    background: var(--obsidian-2) !important;
+    border: 1px solid rgba(37,99,235,0.25) !important;
+    border-radius: 8px !important;
+    color: #EFF6FF !important;
+  }
+
+  .recharts-tooltip-label {
+    color: #38BDF8 !important;
+    font-weight: 600 !important;
+  }
+
+  /* ─── QUBO HEATMAP ─────────────────────────────────────────── */
+
+  .qubo-heatmap-cell {
+    transition: opacity 0.2s;
+  }
+
+  /* ─── SCROLLBAR ────────────────────────────────────────────── */
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #F8FAFC; }
+  ::-webkit-scrollbar-thumb {
+    background: var(--line-beige);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: #2563EB; }
+
+  /* ─── LOADING SHIMMER ──────────────────────────────────────── */
+
+  .shimmer {
+    background: linear-gradient(90deg,
+      #EFF6FF 0%,
+      #FFFFFF 50%,
+      #EFF6FF 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.8s infinite;
+  }
+
+  /* ─── DELETE CONFIRM MODAL ─────────────────────────────────── */
+
+  .modal-backdrop {
+    @apply fixed inset-0 z-50 flex items-center justify-center;
+    background: rgba(10, 22, 40, 0.65);
+    backdrop-filter: blur(6px);
+    animation: fadeIn 0.18s ease-out;
+  }
+
+  .modal-panel {
+    @apply glass-obsidian p-8 max-w-md w-full mx-4;
+    animation: slideUp 0.25s cubic-bezier(0.22,1,0.36,1);
+    color: #EFF6FF;
+  }
+
+  /* ─── CII RATING COLORS ────────────────────────────────────── */
+
+  .cii-A { color: #047857; background: rgba(16,185,129,0.14); }
+  .cii-B { color: #059669; background: rgba(16,185,129,0.10); }
+  .cii-C { color: #b45309; background: rgba(245,158,11,0.12); }
+  .cii-D { color: #c2410c; background: rgba(249,115,22,0.12); }
+  .cii-E { color: #b91c1c; background: rgba(239,68,68,0.12); }
+}
+
+/* ─── ANIMATIONS ──────────────────────────────────────────────── */
+
+@keyframes fadeIn    { from { opacity: 0 } to { opacity: 1 } }
+@keyframes slideUp   { from { opacity: 0; transform: translateY(16px) } to { opacity: 1; transform: translateY(0) } }
+@keyframes wave      { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-5px) } }
+@keyframes pulseSoft { 0%,100% { opacity: 0.75 } 50% { opacity: 1 } }
+@keyframes shimmer   { 0% { background-position: -200% 0 } 100% { background-position: 200% 0 } }
+
+@keyframes oceanSway {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-4px) rotate(0.6deg);
+  }
+  75% {
+    transform: translateY(3px) rotate(-0.6deg);
+  }
+}
+
+@keyframes waterRipple {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes propSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-ocean-sway {
+  animation: oceanSway 5.5s ease-in-out infinite;
+}
+
+.animate-prop-spin {
+  animation: propSpin 1.2s linear infinite;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Staggered card animation for fleet grid */
+.vessel-card:nth-child(1) { animation-delay: 0ms; }
+.vessel-card:nth-child(2) { animation-delay: 60ms; }
+.vessel-card:nth-child(3) { animation-delay: 120ms; }
+.vessel-card:nth-child(4) { animation-delay: 180ms; }
+.vessel-card:nth-child(5) { animation-delay: 240ms; }
+.vessel-card:nth-child(6) { animation-delay: 300ms; }
+

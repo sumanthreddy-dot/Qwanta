@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGradRoro" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#050812"/>
+      <stop offset="60%" stop-color="#0B1527"/>
+      <stop offset="100%" stop-color="#12233E"/>
+    </linearGradient>
+    <linearGradient id="seaGradRoro" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0C2849"/>
+      <stop offset="50%" stop-color="#06182D"/>
+      <stop offset="100%" stop-color="#020A15"/>
+    </linearGradient>
+    <linearGradient id="hullGradRoro" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="40%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <filter id="glowRoro" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="260" fill="url(#skyGradRoro)"/>
+  <ellipse cx="400" cy="260" rx="350" ry="25" fill="#38BDF8" opacity="0.10" filter="url(#glowRoro)"/>
+  <rect y="260" width="800" height="190" fill="url(#seaGradRoro)"/>
+
+  <!-- Water Reflections -->
+  <path d="M 0,274 Q 230,270 460,274 T 800,274" stroke="#0284C7" stroke-width="1.2" fill="none" opacity="0.3"/>
+  <path d="M 0,292 Q 210,287 520,292 T 800,292" stroke="#38BDF8" stroke-width="1.1" fill="none" opacity="0.2"/>
+
+  <!-- Bow Wave -->
+  <path d="M 660,288 Q 720,296 790,308 L 740,322 Q 685,306 650,296 Z" fill="#E0F2FE" opacity="0.3"/>
+
+  <!-- RO-RO / VEHICLE CARRIER TALL BOX HULL PROFILE -->
+  <!-- Red Keel -->
+  <path d="M 125,282 L 660,282 L 678,286 L 688,292 L 660,296 L 130,296 L 120,288 Z" fill="#991B1B"/>
+  
+  <!-- Lower Dark Hull -->
+  <path d="M 125,230 L 170,230 L 640,230 L 685,260 L 660,282 L 125,282 L 115,255 Z" fill="url(#hullGradRoro)" stroke="#334155" stroke-width="1.5"/>
+  <line x1="120" y1="280" x2="668" y2="280" stroke="#10B981" stroke-width="2" opacity="0.8"/>
+
+  <!-- TALL ENCLOSED GARAGE DECKS (PCTC - Pure Car and Truck Carrier) -->
+  <path d="M 130,135 L 610,135 L 650,195 L 640,230 L 125,230 L 125,160 Z" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.5"/>
+
+  <!-- Stern Quarter Ramp (Characteristic of Ro-Ro) -->
+  <path d="M 125,200 L 95,245 L 110,250 L 130,215 Z" fill="#475569" stroke="#64748B"/>
+  <line x1="125" y1="200" x2="95" y2="245" stroke="#CBD5E1" stroke-width="2"/> <!-- Suspension cable -->
+
+  <!-- Deck Vent Louvers / Air Intakes along Garage Deck -->
+  <g fill="#CBD5E1">
+    <rect x="200" y="155" width="25" height="15" rx="1"/>
+    <rect x="240" y="155" width="25" height="15" rx="1"/>
+    <rect x="280" y="155" width="25" height="15" rx="1"/>
+    <rect x="320" y="155" width="25" height="15" rx="1"/>
+    <rect x="360" y="155" width="25" height="15" rx="1"/>
+    <rect x="400" y="155" width="25" height="15" rx="1"/>
+    <rect x="440" y="155" width="25" height="15" rx="1"/>
+    <rect x="480" y="155" width="25" height="15" rx="1"/>
+    <rect x="520" y="155" width="25" height="15" rx="1"/>
+    <rect x="560" y="155" width="25" height="15" rx="1"/>
+  </g>
+
+  <!-- NAVIGATION BRIDGE (FORWARD PLACED ON RO-RO / PCTC) -->
+  <path d="M 570,115 L 625,115 L 635,135 L 565,135 Z" fill="#E2E8F0" stroke="#64748B"/>
+  <rect x="572" y="118" width="55" height="6" rx="1" fill="#0284C7"/> <!-- Forward panoramic windows -->
+
+  <!-- AFT EXHAUST FUNNEL -->
+  <path d="M 155,95 L 175,95 L 178,135 L 152,135 Z" fill="#0F172A" stroke="#334155"/>
+  <rect x="154" y="104" width="22" height="6" fill="#10B981"/> <!-- Green eco stripe -->
+  <line x1="165" y1="135" x2="165" y2="70" stroke="#CBD5E1" stroke-width="2"/>
+  <circle cx="165" cy="68" r="3" fill="#38BDF8" filter="url(#glowRoro)"/>
+
+  <!-- Hull Decal -->
+  <text x="250" y="255" fill="#C49A72" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" letter-spacing="4" opacity="0.95">QWANTA • RO-RO CARRIER</text>
+  <circle cx="235" cy="250" r="4" fill="#10B981" filter="url(#glowRoro)"/>
+</svg>

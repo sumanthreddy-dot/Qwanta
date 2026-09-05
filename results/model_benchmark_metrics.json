@@ -1,0 +1,133 @@
+{
+  "benchmark_timestamp": "2026-09-05T03:23:08.893173",
+  "dataset_reference": "Kamsarmax Operational Dataset (GreenQ_Fleet_ALL_IN_ONE.csv)",
+  "evaluation_sample_size": 6000,
+  "features_evaluated": [
+    "Speed over ground (kn)",
+    "distance_nm",
+    "capacity_tonnes",
+    "engine_rated_power_kw",
+    "cargo_demand_tonnes",
+    "Wave height (m)",
+    "Wind speed (m/s)",
+    "Current speed (m/s)"
+  ],
+  "decision_time_feature_rule": "Engine internal states (RPM, torque, shaft power) strictly excluded from decision-time inference",
+  "models_evaluated_count": 9,
+  "ranking": {
+    "best_model": "Extra Trees",
+    "second_best": "HistGradientBoosting",
+    "classical_baseline": "Linear Regression",
+    "fastest_model": "Linear Regression"
+  },
+  "model_metrics": [
+    {
+      "model_name": "Extra Trees",
+      "model_key": "extra_trees",
+      "mae": 16.8,
+      "rmse": 28.86,
+      "r2": 0.9817,
+      "mape": 2.52,
+      "prediction_runtime_ms": 18.33,
+      "training_runtime_ms": 45.59,
+      "is_tree_based": true,
+      "rank": 1
+    },
+    {
+      "model_name": "HistGradientBoosting",
+      "model_key": "histgradientboosting",
+      "mae": 17.74,
+      "rmse": 29.43,
+      "r2": 0.9809,
+      "mape": 2.8,
+      "prediction_runtime_ms": 2.73,
+      "training_runtime_ms": 215.63,
+      "is_tree_based": true,
+      "rank": 2
+    },
+    {
+      "model_name": "Random Forest",
+      "model_key": "random_forest",
+      "mae": 16.43,
+      "rmse": 29.55,
+      "r2": 0.9808,
+      "mape": 2.57,
+      "prediction_runtime_ms": 16.68,
+      "training_runtime_ms": 97.22,
+      "is_tree_based": true,
+      "rank": 3
+    },
+    {
+      "model_name": "XGBoost",
+      "model_key": "xgboost",
+      "mae": 17.3,
+      "rmse": 31.42,
+      "r2": 0.9783,
+      "mape": 2.76,
+      "prediction_runtime_ms": 1.55,
+      "training_runtime_ms": 154.61,
+      "is_tree_based": true,
+      "rank": 4
+    },
+    {
+      "model_name": "CatBoost",
+      "model_key": "catboost",
+      "mae": 18.76,
+      "rmse": 31.45,
+      "r2": 0.9782,
+      "mape": 2.9,
+      "prediction_runtime_ms": 1.35,
+      "training_runtime_ms": 435.09,
+      "is_tree_based": true,
+      "rank": 5
+    },
+    {
+      "model_name": "LightGBM",
+      "model_key": "lightgbm",
+      "mae": 18.24,
+      "rmse": 31.69,
+      "r2": 0.9779,
+      "mape": 2.9,
+      "prediction_runtime_ms": 2.31,
+      "training_runtime_ms": 33.77,
+      "is_tree_based": false,
+      "rank": 6
+    },
+    {
+      "model_name": "MLP Neural Network",
+      "model_key": "neural_network_mlp",
+      "mae": 45.24,
+      "rmse": 67.2,
+      "r2": 0.9006,
+      "mape": 6.47,
+      "prediction_runtime_ms": 1.17,
+      "training_runtime_ms": 3371.75,
+      "is_tree_based": false,
+      "rank": 7
+    },
+    {
+      "model_name": "SVM / SVR",
+      "model_key": "svm_svr",
+      "mae": 57.55,
+      "rmse": 87.83,
+      "r2": 0.8301,
+      "mape": 8.72,
+      "prediction_runtime_ms": 409.21,
+      "training_runtime_ms": 604.98,
+      "is_tree_based": false,
+      "rank": 8
+    },
+    {
+      "model_name": "Linear Regression",
+      "model_key": "linear_regression",
+      "mae": 61.36,
+      "rmse": 94.28,
+      "r2": 0.8043,
+      "mape": 10.96,
+      "prediction_runtime_ms": 0.11,
+      "training_runtime_ms": 1.09,
+      "is_tree_based": false,
+      "rank": 9
+    }
+  ]
+}

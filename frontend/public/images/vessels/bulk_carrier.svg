@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGradBulk" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="60%" stop-color="#0B1322"/>
+      <stop offset="100%" stop-color="#0F1C30"/>
+    </linearGradient>
+    <linearGradient id="seaGradBulk" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0A223D"/>
+      <stop offset="50%" stop-color="#051629"/>
+      <stop offset="100%" stop-color="#020B17"/>
+    </linearGradient>
+    <linearGradient id="hullGradBulk" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="60%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="keelGradBulk" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#B91C1C"/>
+      <stop offset="100%" stop-color="#7F1D1D"/>
+    </linearGradient>
+    <filter id="blurBulk" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="260" fill="url(#skyGradBulk)"/>
+  <ellipse cx="400" cy="260" rx="350" ry="25" fill="#38BDF8" opacity="0.10" filter="url(#blurBulk)"/>
+  <rect y="260" width="800" height="190" fill="url(#seaGradBulk)"/>
+
+  <!-- Water Ripples -->
+  <path d="M 0,272 Q 220,268 440,272 T 800,272" stroke="#0284C7" stroke-width="1.2" fill="none" opacity="0.3"/>
+  <path d="M 0,290 Q 200,285 500,290 T 800,290" stroke="#0D9488" stroke-width="1.2" fill="none" opacity="0.2"/>
+  <path d="M 50,330 Q 350,320 700,330 T 800,330" stroke="#38BDF8" stroke-width="1" fill="none" opacity="0.12"/>
+
+  <!-- Bow Wave -->
+  <path d="M 660,288 Q 720,296 790,308 L 740,322 Q 685,306 650,296 Z" fill="#E0F2FE" opacity="0.3"/>
+
+  <!-- BULK CARRIER HULL -->
+  <!-- Red Keel -->
+  <path d="M 130,282 L 660,282 L 678,286 L 688,292 L 660,296 L 135,296 L 125,288 Z" fill="url(#keelGradBulk)"/>
+  <!-- Main High Freeboard Hull -->
+  <path d="M 130,205 L 200,205 L 630,205 L 685,255 L 660,282 L 130,282 L 118,245 Z" fill="url(#hullGradBulk)" stroke="#475569" stroke-width="1.5"/>
+  <line x1="125" y1="280" x2="668" y2="280" stroke="#06B6D4" stroke-width="2" opacity="0.8"/>
+
+  <!-- CARGO HOLDS & HATCH COVERS (Characteristic of Dry Bulk) -->
+  <!-- Hold 1 -->
+  <rect x="220" y="195" width="65" height="10" rx="2" fill="#E2E8F0" stroke="#64748B" stroke-width="1"/>
+  <rect x="225" y="191" width="55" height="4" rx="1" fill="#94A3B8"/>
+  <!-- Crane 1 -->
+  <rect x="290" y="180" width="8" height="25" fill="#F59E0B"/>
+  <line x1="294" y1="180" x2="260" y2="150" stroke="#F59E0B" stroke-width="3"/>
+  <line x1="260" y1="150" x2="260" y2="185" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2 2"/>
+
+  <!-- Hold 2 -->
+  <rect x="310" y="195" width="65" height="10" rx="2" fill="#E2E8F0" stroke="#64748B" stroke-width="1"/>
+  <rect x="315" y="191" width="55" height="4" rx="1" fill="#94A3B8"/>
+  <!-- Crane 2 -->
+  <rect x="380" y="180" width="8" height="25" fill="#F59E0B"/>
+  <line x1="384" y1="180" x2="350" y2="150" stroke="#F59E0B" stroke-width="3"/>
+
+  <!-- Hold 3 -->
+  <rect x="400" y="195" width="65" height="10" rx="2" fill="#E2E8F0" stroke="#64748B" stroke-width="1"/>
+  <rect x="405" y="191" width="55" height="4" rx="1" fill="#94A3B8"/>
+  <!-- Crane 3 -->
+  <rect x="470" y="180" width="8" height="25" fill="#F59E0B"/>
+  <line x1="474" y1="180" x2="440" y2="150" stroke="#F59E0B" stroke-width="3"/>
+
+  <!-- Hold 4 -->
+  <rect x="490" y="195" width="65" height="10" rx="2" fill="#E2E8F0" stroke="#64748B" stroke-width="1"/>
+  <rect x="495" y="191" width="55" height="4" rx="1" fill="#94A3B8"/>
+  <!-- Crane 4 -->
+  <rect x="560" y="180" width="8" height="25" fill="#F59E0B"/>
+  <line x1="564" y1="180" x2="530" y2="150" stroke="#F59E0B" stroke-width="3"/>
+
+  <!-- Hold 5 (Forward) -->
+  <rect x="580" y="195" width="45" height="10" rx="2" fill="#E2E8F0" stroke="#64748B" stroke-width="1"/>
+
+  <!-- SUPERSTRUCTURE / BRIDGE (AFT) -->
+  <rect x="145" y="125" width="55" height="80" rx="3" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
+  <rect x="140" y="122" width="65" height="10" rx="1" fill="#CBD5E1"/>
+  <rect x="146" y="125" width="53" height="5" rx="1" fill="#0284C7" opacity="0.9"/>
+  <!-- Portholes -->
+  <circle cx="160" cy="148" r="2.5" fill="#38BDF8"/>
+  <circle cx="175" cy="148" r="2.5" fill="#38BDF8"/>
+  <circle cx="190" cy="148" r="2.5" fill="#38BDF8"/>
+  <circle cx="160" cy="168" r="2.5" fill="#38BDF8"/>
+  <circle cx="175" cy="168" r="2.5" fill="#38BDF8"/>
+  <circle cx="190" cy="168" r="2.5" fill="#38BDF8"/>
+
+  <!-- Funnel -->
+  <path d="M 160,85 L 182,85 L 185,122 L 158,122 Z" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+  <rect x="159" y="94" width="24" height="6" fill="#06B6D4"/>
+  <line x1="171" y1="122" x2="171" y2="60" stroke="#E2E8F0" stroke-width="2"/>
+  <circle cx="171" cy="58" r="3" fill="#10B981" filter="url(#blurBulk)"/>
+
+  <!-- Hull Decal -->
+  <text x="310" y="250" fill="#C49A72" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" letter-spacing="4" opacity="0.95">QWANTA • BULK CARRIER</text>
+  <circle cx="295" cy="245" r="4" fill="#06B6D4" filter="url(#blurBulk)"/>
+</svg>

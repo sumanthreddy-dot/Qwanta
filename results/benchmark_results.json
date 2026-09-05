@@ -1,0 +1,71 @@
+{
+  "num_vessels": 6,
+  "num_demands": 4,
+  "num_qubo_variables": 1152,
+  "benchmark_table": [
+    {
+      "algorithm": "Shortest Path Baseline",
+      "objective_value": 111.06,
+      "total_fuel_litres": 4530974.1,
+      "total_fuel_cost_usd": 2319858.73,
+      "total_op_cost_usd": 1047086.4,
+      "total_cost_usd": 3366945.13,
+      "total_co2_kg": 13896497.6,
+      "total_co2_tonnes": 13896.5,
+      "total_travel_time_hours": 2181.4,
+      "runtime_ms": 0.64,
+      "constraint_violations": 6,
+      "is_feasible": false
+    },
+    {
+      "algorithm": "Greedy Local Fuel Minimizer",
+      "objective_value": -58.32,
+      "total_fuel_litres": 6915448.2,
+      "total_fuel_cost_usd": 3540709.46,
+      "total_op_cost_usd": 845500.8,
+      "total_cost_usd": 4386210.26,
+      "total_co2_kg": 21209679.5,
+      "total_co2_tonnes": 21209.68,
+      "total_travel_time_hours": 1761.5,
+      "runtime_ms": 0.58,
+      "constraint_violations": 0,
+      "is_feasible": true
+    },
+    {
+      "algorithm": "Genetic Algorithm (GA)",
+      "objective_value": -58.35,
+      "total_fuel_litres": 12779301.8,
+      "total_fuel_cost_usd": 4212347.04,
+      "total_op_cost_usd": 789624.0,
+      "total_cost_usd": 5001971.04,
+      "total_co2_kg": 20163900.5,
+      "total_co2_tonnes": 20163.9,
+      "total_travel_time_hours": 1645.1,
+      "runtime_ms": 392.41,
+      "constraint_violations": 0,
+      "is_feasible": true
+    },
+    {
+      "algorithm": "QUBO + Simulated Annealing",
+      "objective_value": -58.25,
+      "total_fuel_litres": 11266201.9,
+      "total_fuel_cost_usd": 4831723.64,
+      "total_op_cost_usd": 840220.8,
+      "total_cost_usd": 5671944.44,
+      "total_co2_kg": 20241919.1,
+      "total_co2_tonnes": 20241.92,
+      "total_travel_time_hours": 1750.5,
+      "runtime_ms": 27.36,
+      "constraint_violations": 0,
+      "is_feasible": true
+    }
+  ],
+  "improvement_vs_baseline": {
+    "fuel_savings_pct": -148.6,
+    "cost_savings_pct": -68.5,
+    "co2_reduction_pct": -45.7,
+    "time_diff_pct": 19.8,
+    "runtime_ratio": 42.75
+  },
+  "disclaimer": "Results shown are based on physical hydrodynamic modeling and actual algorithmic execution without fabrication."
+}

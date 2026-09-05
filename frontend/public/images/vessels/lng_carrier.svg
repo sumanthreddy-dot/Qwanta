@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGradLng" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#060913"/>
+      <stop offset="60%" stop-color="#091428"/>
+      <stop offset="100%" stop-color="#0E2240"/>
+    </linearGradient>
+    <linearGradient id="seaGradLng" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0A284A"/>
+      <stop offset="50%" stop-color="#05172C"/>
+      <stop offset="100%" stop-color="#020914"/>
+    </linearGradient>
+    <linearGradient id="hullGradLng" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="domeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+    <linearGradient id="cryoGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="glowLng" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="260" fill="url(#skyGradLng)"/>
+  <ellipse cx="400" cy="260" rx="350" ry="25" fill="#06B6D4" opacity="0.14" filter="url(#glowLng)"/>
+  <rect y="260" width="800" height="190" fill="url(#seaGradLng)"/>
+
+  <!-- Water Reflections -->
+  <path d="M 0,273 Q 230,269 460,273 T 800,273" stroke="#38BDF8" stroke-width="1.3" fill="none" opacity="0.3"/>
+  <path d="M 0,290 Q 210,285 520,290 T 800,290" stroke="#06B6D4" stroke-width="1.1" fill="none" opacity="0.2"/>
+
+  <!-- Bow Wave -->
+  <path d="M 660,288 Q 720,296 790,308 L 740,322 Q 685,306 650,296 Z" fill="#E0F2FE" opacity="0.32"/>
+
+  <!-- LNG CARRIER HULL -->
+  <!-- Red Keel -->
+  <path d="M 125,282 L 660,282 L 678,286 L 688,292 L 660,296 L 130,296 L 120,288 Z" fill="#991B1B"/>
+  <!-- Main High Hull -->
+  <path d="M 125,210 L 195,210 L 625,210 L 685,258 L 660,282 L 125,282 L 115,250 Z" fill="url(#hullGradLng)" stroke="#334155" stroke-width="1.5"/>
+  <line x1="120" y1="280" x2="668" y2="280" stroke="#06B6D4" stroke-width="2.5" opacity="0.9"/>
+
+  <!-- SPHERICAL MOSS CRYOGENIC LNG TANKS (Characteristic Domes) -->
+  <!-- Tank 1 (Aft) -->
+  <path d="M 215,210 A 46,46 0 0,1 307,210 Z" fill="url(#domeGrad)" stroke="#64748B" stroke-width="1.2"/>
+  <ellipse cx="261" cy="180" rx="35" ry="6" fill="#38BDF8" opacity="0.3" filter="url(#glowLng)"/>
+  <line x1="261" y1="164" x2="261" y2="155" stroke="#CBD5E1" stroke-width="2"/> <!-- Relief Valve Mast -->
+
+  <!-- Tank 2 -->
+  <path d="M 315,210 A 46,46 0 0,1 407,210 Z" fill="url(#domeGrad)" stroke="#64748B" stroke-width="1.2"/>
+  <ellipse cx="361" cy="180" rx="35" ry="6" fill="#38BDF8" opacity="0.3" filter="url(#glowLng)"/>
+  <line x1="361" y1="164" x2="361" y2="155" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- Tank 3 -->
+  <path d="M 415,210 A 46,46 0 0,1 507,210 Z" fill="url(#domeGrad)" stroke="#64748B" stroke-width="1.2"/>
+  <ellipse cx="461" cy="180" rx="35" ry="6" fill="#38BDF8" opacity="0.3" filter="url(#glowLng)"/>
+  <line x1="461" y1="164" x2="461" y2="155" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- Tank 4 (Forward) -->
+  <path d="M 515,210 A 46,46 0 0,1 607,210 Z" fill="url(#domeGrad)" stroke="#64748B" stroke-width="1.2"/>
+  <ellipse cx="561" cy="180" rx="35" ry="6" fill="#38BDF8" opacity="0.3" filter="url(#glowLng)"/>
+  <line x1="561" y1="164" x2="561" y2="155" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- Cryogenic Insulated Interconnecting Pipeline -->
+  <line x1="205" y1="205" x2="615" y2="205" stroke="#38BDF8" stroke-width="2.5" opacity="0.9"/>
+
+  <!-- SUPERSTRUCTURE / BRIDGE (AFT) -->
+  <rect x="135" y="130" width="55" height="80" rx="3" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.2"/>
+  <rect x="130" y="127" width="65" height="10" rx="1" fill="#E2E8F0"/>
+  <rect x="136" y="130" width="53" height="5" rx="1" fill="#0284C7"/>
+  <!-- Windows / Portholes -->
+  <circle cx="150" cy="155" r="2.5" fill="#38BDF8"/>
+  <circle cx="165" cy="155" r="2.5" fill="#38BDF8"/>
+  <circle cx="180" cy="155" r="2.5" fill="#38BDF8"/>
+  <circle cx="150" cy="175" r="2.5" fill="#38BDF8"/>
+  <circle cx="165" cy="175" r="2.5" fill="#38BDF8"/>
+  <circle cx="180" cy="175" r="2.5" fill="#38BDF8"/>
+
+  <!-- Funnel with Dual-Fuel / Clean Gas Emblem -->
+  <path d="M 152,90 L 174,90 L 177,127 L 150,127 Z" fill="#0F172A" stroke="#334155"/>
+  <rect x="151" y="98" width="24" height="6" fill="#10B981"/> <!-- Green eco stripe -->
+  <line x1="163" y1="127" x2="163" y2="65" stroke="#CBD5E1" stroke-width="2"/>
+  <circle cx="163" cy="63" r="3" fill="#06B6D4" filter="url(#glowLng)"/>
+
+  <!-- Hull Decal -->
+  <text x="310" y="252" fill="#C49A72" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" letter-spacing="4" opacity="0.95">QWANTA • CRYOGENIC LNG</text>
+  <circle cx="295" cy="247" r="4" fill="#06B6D4" filter="url(#glowLng)"/>
+</svg>

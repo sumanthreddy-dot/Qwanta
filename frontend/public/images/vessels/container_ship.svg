@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="60%" stop-color="#0B1528"/>
+      <stop offset="100%" stop-color="#102544"/>
+    </linearGradient>
+    <linearGradient id="seaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0B2545"/>
+      <stop offset="40%" stop-color="#061A33"/>
+      <stop offset="100%" stop-color="#030E1D"/>
+    </linearGradient>
+    <linearGradient id="hullGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="60%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="keelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#DC2626"/>
+      <stop offset="100%" stop-color="#7F1D1D"/>
+    </linearGradient>
+    <linearGradient id="glowTeal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="blurGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect width="800" height="260" fill="url(#skyGrad)"/>
+  
+  <!-- Subtle Horizon Glow -->
+  <ellipse cx="400" cy="260" rx="360" ry="30" fill="#06B6D4" opacity="0.12" filter="url(#blurGlow)"/>
+
+  <!-- Stars / Navigation constellations -->
+  <circle cx="120" cy="50" r="1.2" fill="#E2E8F0" opacity="0.6"/>
+  <circle cx="280" cy="70" r="1.5" fill="#38BDF8" opacity="0.7"/>
+  <circle cx="580" cy="45" r="1.2" fill="#E2E8F0" opacity="0.5"/>
+  <circle cx="690" cy="85" r="1" fill="#34D399" opacity="0.6"/>
+
+  <!-- Sea -->
+  <rect y="260" width="800" height="190" fill="url(#seaGrad)"/>
+
+  <!-- Water Reflections & Waves -->
+  <path d="M 0,270 Q 200,265 400,270 T 800,270" stroke="#0EA5E9" stroke-width="1.5" fill="none" opacity="0.25"/>
+  <path d="M 0,285 Q 250,280 500,285 T 800,285" stroke="#10B981" stroke-width="1.2" fill="none" opacity="0.2"/>
+  <path d="M 50,315 Q 300,310 600,315 T 800,315" stroke="#06B6D4" stroke-width="1" fill="none" opacity="0.15"/>
+  <path d="M 0,350 Q 200,345 450,350 T 800,350" stroke="#38BDF8" stroke-width="1" fill="none" opacity="0.1"/>
+
+  <!-- Wake / Bow Wave -->
+  <path d="M 660,288 Q 720,295 790,305 L 750,320 Q 690,305 650,295 Z" fill="#E0F2FE" opacity="0.35"/>
+  <path d="M 120,288 Q 70,298 10,315 L 40,325 Q 90,305 140,292 Z" fill="#E0F2FE" opacity="0.25"/>
+
+  <!-- CONTAINER VESSEL HULL -->
+  <!-- Red Keel Stripe / Boot-topping -->
+  <path d="M 140,282 L 660,282 L 675,286 L 685,290 L 660,294 L 145,294 L 135,288 Z" fill="url(#keelGrad)"/>
+
+  <!-- Main Dark Blue Hull -->
+  <path d="M 140,215 L 200,215 L 610,215 L 680,260 L 660,282 L 140,282 L 130,250 Z" fill="url(#hullGrad)" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- Bulbous Bow Highlight -->
+  <ellipse cx="682" cy="278" rx="14" ry="7" fill="#0EA5E9" opacity="0.4"/>
+
+  <!-- Hull Waterline Accent Line -->
+  <path d="M 138,280 L 665,280" stroke="#10B981" stroke-width="2" opacity="0.8"/>
+
+  <!-- STACKED CONTAINERS -->
+  <!-- Tier 1 -->
+  <g id="containers-tier1">
+    <!-- Group 1 -->
+    <rect x="220" y="180" width="32" height="34" rx="2" fill="#0284C7" stroke="#0369A1" stroke-width="0.8"/>
+    <rect x="254" y="180" width="32" height="34" rx="2" fill="#0D9488" stroke="#0F766E" stroke-width="0.8"/>
+    <rect x="288" y="180" width="32" height="34" rx="2" fill="#E11D48" stroke="#BE123C" stroke-width="0.8"/>
+    <rect x="322" y="180" width="32" height="34" rx="2" fill="#D97706" stroke="#B45309" stroke-width="0.8"/>
+    <rect x="356" y="180" width="32" height="34" rx="2" fill="#059669" stroke="#047857" stroke-width="0.8"/>
+    <rect x="390" y="180" width="32" height="34" rx="2" fill="#2563EB" stroke="#1D4ED8" stroke-width="0.8"/>
+    <rect x="424" y="180" width="32" height="34" rx="2" fill="#0D9488" stroke="#0F766E" stroke-width="0.8"/>
+    <rect x="458" y="180" width="32" height="34" rx="2" fill="#E11D48" stroke="#BE123C" stroke-width="0.8"/>
+    <rect x="492" y="180" width="32" height="34" rx="2" fill="#0284C7" stroke="#0369A1" stroke-width="0.8"/>
+    <rect x="526" y="180" width="32" height="34" rx="2" fill="#D97706" stroke="#B45309" stroke-width="0.8"/>
+    <rect x="560" y="185" width="32" height="29" rx="2" fill="#059669" stroke="#047857" stroke-width="0.8"/>
+  </g>
+
+  <!-- Tier 2 -->
+  <g id="containers-tier2">
+    <rect x="220" y="145" width="32" height="33" rx="2" fill="#D97706" stroke="#B45309" stroke-width="0.8"/>
+    <rect x="254" y="145" width="32" height="33" rx="2" fill="#2563EB" stroke="#1D4ED8" stroke-width="0.8"/>
+    <rect x="288" y="145" width="32" height="33" rx="2" fill="#059669" stroke="#047857" stroke-width="0.8"/>
+    <rect x="322" y="145" width="32" height="33" rx="2" fill="#0284C7" stroke="#0369A1" stroke-width="0.8"/>
+    <rect x="356" y="145" width="32" height="33" rx="2" fill="#E11D48" stroke="#BE123C" stroke-width="0.8"/>
+    <rect x="390" y="145" width="32" height="33" rx="2" fill="#0D9488" stroke="#0F766E" stroke-width="0.8"/>
+    <rect x="424" y="145" width="32" height="33" rx="2" fill="#2563EB" stroke="#1D4ED8" stroke-width="0.8"/>
+    <rect x="458" y="145" width="32" height="33" rx="2" fill="#D97706" stroke="#B45309" stroke-width="0.8"/>
+    <rect x="492" y="145" width="32" height="33" rx="2" fill="#059669" stroke="#047857" stroke-width="0.8"/>
+    <rect x="526" y="145" width="32" height="33" rx="2" fill="#0284C7" stroke="#0369A1" stroke-width="0.8"/>
+  </g>
+
+  <!-- Tier 3 (High Cube Upper Layer) -->
+  <g id="containers-tier3">
+    <rect x="254" y="112" width="32" height="31" rx="2" fill="#0D9488" stroke="#0F766E" stroke-width="0.8"/>
+    <rect x="288" y="112" width="32" height="31" rx="2" fill="#D97706" stroke="#B45309" stroke-width="0.8"/>
+    <rect x="322" y="112" width="32" height="31" rx="2" fill="#2563EB" stroke="#1D4ED8" stroke-width="0.8"/>
+    <rect x="356" y="112" width="32" height="31" rx="2" fill="#0284C7" stroke="#0369A1" stroke-width="0.8"/>
+    <rect x="390" y="112" width="32" height="31" rx="2" fill="#E11D48" stroke="#BE123C" stroke-width="0.8"/>
+    <rect x="424" y="112" width="32" height="31" rx="2" fill="#059669" stroke="#047857" stroke-width="0.8"/>
+    <rect x="458" y="112" width="32" height="31" rx="2" fill="#0284C7" stroke="#0369A1" stroke-width="0.8"/>
+    <rect x="492" y="112" width="32" height="31" rx="2" fill="#D97706" stroke="#B45309" stroke-width="0.8"/>
+  </g>
+
+  <!-- SUPERSTRUCTURE / BRIDGE (AFT) -->
+  <!-- Main Accommodation Block -->
+  <rect x="155" y="125" width="55" height="90" rx="3" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.2"/>
+  
+  <!-- Bridge Deck Wings (Top level navigation) -->
+  <path d="M 148,125 L 217,125 L 217,135 L 148,135 Z" fill="#E2E8F0" stroke="#64748B"/>
+  
+  <!-- Bridge Windows (Green glowing glass) -->
+  <rect x="154" y="128" width="57" height="5" rx="1" fill="#0284C7" opacity="0.9"/>
+
+  <!-- Lower Port Holes / Cabins -->
+  <circle cx="168" cy="150" r="2.5" fill="#38BDF8"/>
+  <circle cx="182" cy="150" r="2.5" fill="#38BDF8"/>
+  <circle cx="196" cy="150" r="2.5" fill="#38BDF8"/>
+  <circle cx="168" cy="170" r="2.5" fill="#38BDF8"/>
+  <circle cx="182" cy="170" r="2.5" fill="#38BDF8"/>
+  <circle cx="196" cy="170" r="2.5" fill="#38BDF8"/>
+
+  <!-- Exhaust Funnel (Smokestack) -->
+  <path d="M 172,85 L 195,85 L 198,125 L 169,125 Z" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+  <rect x="170" y="92" width="27" height="6" fill="#10B981"/> <!-- Green decarbonization stripe -->
+
+  <!-- Radar & Communications Mast -->
+  <line x1="182" y1="125" x2="182" y2="60" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="172" y1="75" x2="192" y2="75" stroke="#CBD5E1" stroke-width="1.5"/>
+  <line x1="175" y1="90" x2="189" y2="90" stroke="#CBD5E1" stroke-width="1.5"/>
+  <circle cx="182" cy="58" r="3" fill="#38BDF8" filter="url(#blurGlow)"/>
+
+  <!-- Modern Quantum AI Decal Overlay on Hull -->
+  <text x="320" y="255" fill="#C49A72" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" letter-spacing="4" opacity="0.95">QWANTA • ECO-CONTAINER</text>
+  <circle cx="305" cy="250" r="4" fill="#10B981" filter="url(#blurGlow)"/>
+
+  <!-- Bow Forecastle Mast -->
+  <line x1="655" y1="215" x2="655" y2="185" stroke="#94A3B8" stroke-width="1.5"/>
+  <circle cx="655" cy="183" r="2" fill="#F59E0B"/>
+</svg>

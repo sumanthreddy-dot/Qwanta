@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGradGen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#050812"/>
+      <stop offset="60%" stop-color="#091427"/>
+      <stop offset="100%" stop-color="#0F203B"/>
+    </linearGradient>
+    <linearGradient id="seaGradGen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0A2444"/>
+      <stop offset="50%" stop-color="#05162A"/>
+      <stop offset="100%" stop-color="#020A14"/>
+    </linearGradient>
+    <linearGradient id="hullGradGen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <filter id="glowGen" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="260" fill="url(#skyGradGen)"/>
+  <ellipse cx="400" cy="260" rx="350" ry="25" fill="#38BDF8" opacity="0.10" filter="url(#glowGen)"/>
+  <rect y="260" width="800" height="190" fill="url(#seaGradGen)"/>
+
+  <!-- Water Reflections -->
+  <path d="M 0,274 Q 230,270 460,274 T 800,274" stroke="#0284C7" stroke-width="1.2" fill="none" opacity="0.3"/>
+  <path d="M 0,292 Q 210,287 520,292 T 800,292" stroke="#10B981" stroke-width="1.1" fill="none" opacity="0.2"/>
+
+  <!-- Bow Wave -->
+  <path d="M 660,288 Q 720,296 790,308 L 740,322 Q 685,306 650,296 Z" fill="#E0F2FE" opacity="0.3"/>
+
+  <!-- GENERAL CARGO HULL -->
+  <!-- Red Keel -->
+  <path d="M 130,282 L 660,282 L 678,286 L 688,292 L 660,296 L 135,296 L 125,288 Z" fill="#991B1B"/>
+  <!-- Main Hull -->
+  <path d="M 130,212 L 195,212 L 630,212 L 685,258 L 660,282 L 130,282 L 120,250 Z" fill="url(#hullGradGen)" stroke="#334155" stroke-width="1.5"/>
+  <line x1="125" y1="280" x2="668" y2="280" stroke="#06B6D4" stroke-width="2" opacity="0.8"/>
+
+  <!-- DECK CARGO (Mix of breakbulk crates, project cargo, containers) -->
+  <rect x="220" y="188" width="80" height="24" rx="2" fill="#0284C7" stroke="#0369A1"/>
+  <rect x="230" y="172" width="60" height="16" rx="2" fill="#D97706" stroke="#B45309"/>
+
+  <rect x="360" y="188" width="90" height="24" rx="2" fill="#059669" stroke="#047857"/>
+  <rect x="375" y="172" width="60" height="16" rx="2" fill="#2563EB" stroke="#1D4ED8"/>
+
+  <rect x="510" y="188" width="80" height="24" rx="2" fill="#E11D48" stroke="#BE123C"/>
+  <rect x="525" y="172" width="50" height="16" rx="2" fill="#0D9488" stroke="#0F766E"/>
+
+  <!-- HEAVY LIFT DECK CRANES (Between cargo holds) -->
+  <!-- Crane Post 1 -->
+  <rect x="320" y="165" width="16" height="47" rx="2" fill="#E2E8F0" stroke="#94A3B8"/>
+  <circle cx="328" cy="165" r="8" fill="#F59E0B"/>
+  <line x1="328" y1="165" x2="280" y2="120" stroke="#F59E0B" stroke-width="3.5"/> <!-- Jib 1 -->
+  <line x1="280" y1="120" x2="280" y2="170" stroke="#CBD5E1" stroke-width="1.2" stroke-dasharray="2 2"/>
+
+  <!-- Crane Post 2 -->
+  <rect x="475" y="165" width="16" height="47" rx="2" fill="#E2E8F0" stroke="#94A3B8"/>
+  <circle cx="483" cy="165" r="8" fill="#F59E0B"/>
+  <line x1="483" y1="165" x2="435" y2="120" stroke="#F59E0B" stroke-width="3.5"/> <!-- Jib 2 -->
+  <line x1="435" y1="120" x2="435" y2="170" stroke="#CBD5E1" stroke-width="1.2" stroke-dasharray="2 2"/>
+
+  <!-- AFT SUPERSTRUCTURE / ACCOMMODATION -->
+  <rect x="140" y="130" width="55" height="82" rx="3" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.2"/>
+  <rect x="135" y="127" width="65" height="10" rx="1" fill="#E2E8F0"/>
+  <rect x="141" y="130" width="53" height="5" rx="1" fill="#0284C7"/>
+  <circle cx="155" cy="155" r="2.5" fill="#38BDF8"/>
+  <circle cx="170" cy="155" r="2.5" fill="#38BDF8"/>
+  <circle cx="185" cy="155" r="2.5" fill="#38BDF8"/>
+  <circle cx="155" cy="175" r="2.5" fill="#38BDF8"/>
+  <circle cx="170" cy="175" r="2.5" fill="#38BDF8"/>
+  <circle cx="185" cy="175" r="2.5" fill="#38BDF8"/>
+
+  <!-- Funnel -->
+  <path d="M 155,90 L 175,90 L 178,127 L 152,127 Z" fill="#0F172A" stroke="#334155"/>
+  <rect x="154" y="98" width="22" height="6" fill="#06B6D4"/>
+  <line x1="165" y1="127" x2="165" y2="65" stroke="#CBD5E1" stroke-width="2"/>
+  <circle cx="165" cy="63" r="3" fill="#06B6D4" filter="url(#glowGen)"/>
+
+  <!-- Hull Decal -->
+  <text x="310" y="252" fill="#C49A72" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" letter-spacing="4" opacity="0.95">QWANTA • MULTI-PURPOSE CARGO</text>
+  <circle cx="295" cy="247" r="4" fill="#10B981" filter="url(#glowGen)"/>
+</svg>
