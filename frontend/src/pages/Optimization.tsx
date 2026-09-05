@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Cpu, Play, RotateCcw, CheckCircle2, AlertTriangle, ArrowRight,
   TrendingDown, ShieldCheck, Flame, Zap, Layers, Sparkles, IndianRupee, Sliders
@@ -55,7 +55,7 @@ export const Optimization: React.FC = () => {
     w_risk: 0.05
   });
 
-  const [speedOptions, setSpeedOptions] = useState<number[]>([14.0, 16.0, 18.0, 20.0]);
+  const [speedOptions, setSpeedOptions] = useState<number[]>([14.0, 16.0]);
   const [fuelOptions, setFuelOptions] = useState<FuelType[]>(['HFO', 'MGO', 'LNG', 'Biofuel']);
   const [solverType, setSolverType] = useState<string>('SimulatedAnnealing');
   const [iterations, setIterations] = useState<number>(3000);
@@ -80,6 +80,11 @@ export const Optimization: React.FC = () => {
       setLoading(false);
     }
   };
+
+  // Auto-run initial baseline optimization on page load so graph & plan display immediately
+  useEffect(() => {
+    handleRunOptimization();
+  }, []);
 
   const toggleSpeed = (s: number) => {
     if (speedOptions.includes(s)) {
